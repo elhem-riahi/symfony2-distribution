@@ -4,10 +4,11 @@ imports:
     - { resource: assetic.yml }
     - { resource: bundles/stof_doctrine_extensions.yml }
     - { resource: bundles/jms_translation.yml }
+    - { resource: bundles/fos_user.yml }
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
