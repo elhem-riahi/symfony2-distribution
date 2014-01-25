@@ -20,7 +20,16 @@ class AppKernel extends Kernel {
 				new JMS\TranslationBundle\JMSTranslationBundle (),
 				// FOSUserBundle
 				new FOS\UserBundle\FOSUserBundle (),
-				new Application\UserBundle\ApplicationUserBundle () 
+				new Application\UserBundle\ApplicationUserBundle (),
+
+				//Menu
+				new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+				
+				//Pager
+				new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+				
+				//Generator
+				new Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle(),
 		);
 		
 		if (in_array ( $this->getEnvironment (), array (

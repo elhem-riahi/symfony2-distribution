@@ -1,8 +1,9 @@
 {
-	"name" : "symfony/framework-standard-edition",
-	"license" : "MIT",
-	"type" : "project",
-	"description" : "The \"Symfony Standard Edition\" distribution",
+	"name": "kadala/symfony2-distribution",
+    "description": "Symfony2.4 Standard Edition\" distribution",
+    "type": "symfony2-distribution",
+    "homepage": "https://github.com/kadala/symfony2-distribution.git",
+    "license": "MIT",
 	"autoload" : {
 		"psr-0" : {
 			"" : "src/"
@@ -21,11 +22,12 @@
 		"sensio/framework-extra-bundle" : "~3.0",
 		"sensio/generator-bundle" : "~2.3",
 		"incenteev/composer-parameter-handler" : "~2.0",
-		"doctrine/doctrine-fixtures-bundle" : "v2.2.0",
-		"stof/doctrine-extensions-bundle" : "1.1.*@dev",
-		"jms/translation-bundle" : "1.1.*@dev",
 		
-		"friendsofsymfony/user-bundle": "2.0.*@dev"
+		"doctrine/doctrine-fixtures-bundle" : "~2.2",
+		"stof/doctrine-extensions-bundle" : "~1.1",
+		"jms/translation-bundle" : "~1.1",
+		"friendsofsymfony/user-bundle": "2.0.*@dev",
+		"cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev"
 	},
 	"scripts" : {
 		"post-install-cmd" : [
@@ -46,14 +48,12 @@
 	"config" : {
 		"bin-dir" : "bin"
 	},
+	"minimum-stability" : "stable",
 	"extra" : {
 		"symfony-app-dir" : "app",
 		"symfony-web-dir" : "web",
 		"incenteev-parameters" : {
 			"file" : "app/config/parameters.yml"
-		},
-		"branch-alias" : {
-			"dev-master" : "2.4-dev"
 		}
 	}
 }
