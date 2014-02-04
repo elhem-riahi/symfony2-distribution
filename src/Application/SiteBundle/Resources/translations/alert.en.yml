@@ -1,0 +1,20 @@
+####################################################################################################################
+# Translations                                                                                                     #
+#                                                                                                                  #
+# alert messages translations                                                                                      #
+####################################################################################################################
+
+alert:
+    brick:
+        create:
+            error: Errors occurred while saving
+            success: Brick created successfully
+        delete:
+            error: Errors occurred while deleting
+            success: Brick deleted successfully
+        togglePublished:
+            published: Brick has been published successfully
+            unpublished: Brick is now NOT published
+        update:
+            error: Errors occurred while saving
+            success: Changes were saved successfully

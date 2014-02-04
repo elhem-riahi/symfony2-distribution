@@ -2,10 +2,15 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: assetic.yml }
+    - { resource: locales.yml }
     - { resource: bundles/stof_doctrine_extensions.yml }
     - { resource: bundles/jms_translation.yml }
     - { resource: bundles/fos_user.yml }
+    - { resource: bundles/hwi_oauth.yml }
     - { resource: bundles/knp_menu.yml }
+    - { resource: bundles/admingenerator_generator.yml}
+    - { resource: bundles/vich_uploader.yml}
+    - { resource: bundles/fos_message.yml}
 
 framework:
     #esi:             ~
@@ -78,4 +83,4 @@ services:
    twig.extension.text:
        class: Twig_Extensions_Extension_Text
        tags:
-           - { name: twig.extension }
+           - { name: twig.extension }     

@@ -1,0 +1,216 @@
+/* import assets */
+@import "variables.less";
+
+/******************************************************************************************
+CONTROLLER-DEFAULT.LESS
+
+rules for all the templates loaded through Application\SiteBundle\DefaultController
+******************************************************************************************/
+
+/**
+    homepage
+
+    route: route-index_not_localized , homepage
+*/
+body.route-index_not_localized , body.route-homepage {
+
+    #homepage-head-wrapper {
+        padding:        20px 0px;
+        margin-bottom:  20px;
+        background:     @sb_green_medium;
+        color:          #FFF;
+
+        .head {
+            #index-logo {
+                max-width:  100%;
+                overflow:   hidden;
+            }
+            .payoff {
+                p {
+                    overflow: hidden;
+                    margin-bottom:  0px;
+                    font-size:  20px;
+
+                    /*
+                    strong {
+                        font-size: 30px;
+                    }
+                    */
+
+                    &.first {
+                        margin-top:  -6px;
+                        font-size:  23px;
+                    }
+                    &.second {
+                        margin-top:  13px;
+                        font-size:  16px;
+                    }
+
+                    a {
+                        float:  left;
+                        font-size: 13px;
+                        margin-top: -1px;
+                    }
+                }
+            }
+        }
+    }
+
+    .right-col {
+
+        hr {
+            border-top: 1px solid #CCC;
+            width:  100%;
+            //margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #form-login-wrapper {
+            background: #EBEBEB;
+            border: 1px solid B3B3B3;
+            padding:    10px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+
+            form {
+                label {
+                    font-size:  13px;
+                    margin: 0px;
+                }
+                a#forgot-password {
+                    font-size: 11px;
+                }
+                .form-group {
+                    margin-bottom:  0px;
+                }
+                .actions {
+                    margin-top: 8px;
+
+                    .checkbox {
+                        padding-top:    0px;
+                        font-size:      11px;
+                        margin-top:     9px;
+
+                        input[type="checkbox"] {
+                            margin-top: 2px;
+                            margin-left: -14px;
+                        }
+                    }
+                }
+            }
+            ul#oauth-connectors {
+                li {
+                    background: #e94132;
+                    border-radius: 4px;
+                    margin-top: 5px;
+
+                    &:first-child { margin-top: 0px; }
+                    a {
+                        padding: 10px;
+                        font-size: 12px;
+                        color:  #FFF;
+                        display: block;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+
+                        .glyphicon {
+                            float: right;
+                            margin-top: 3px;
+                            font-size: 28px;
+                        }
+                        img {
+                            max-height: 20px;
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+            }
+        }
+        #latest-posts-on-symfonyApplication-blog {
+            img {
+                height: 20px;
+            }
+            #posts {
+                margin-top: 15px;
+                margin-left: 20px;
+
+                ul {
+                    li {
+                        font-size: 12px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    div.Application-wrapper {
+        .head {
+            font-size:  18px;
+            margin-bottom:  20px;
+        }
+        ul.Application-list {
+            li {
+                padding:  10px 0px 10px 10px;
+
+                span.glyphicon {
+                    font-size: 18px;
+                    padding-top: 5px
+                }
+
+                a.title {
+                    font-size: 24px;
+                    color: #555;
+                    &:hover { color: @sb_green_medium; }
+
+                    i { color: rgb(107, 107, 107); }
+                }
+                p.brick-info {
+                    margin-top: 3px;
+
+                    &, a, p, span { font-size: 12px; color: rgb(107, 107, 107); }
+                }
+            }
+        }
+    }
+}
+
+/**
+    page "contribute"
+
+    route: contribute
+*/
+body.route-contribute {
+    ul#github-issues { margin-left: 20px;
+
+        li {
+            margin-bottom: 20px;
+            padding-left:   10px;
+            border-left:4px solid #CCC;
+
+            .info { font-size: 12px; }
+        }
+    }
+}
+
+/**
+    page "developers"
+
+    route: developers
+*/
+body.route-developers {
+    div.main-developers { overflow: hidden;
+        div.name { font-weight: bold; font-size: 20px; margin-bottom: 10px; }
+        a.btn { margin-bottom: 5px; }
+        ul{ padding-left: 20px; margin-left: 10px;
+            li { list-style-type: disc; }
+        }
+    }
+    div#github-contrbutors {
+        .row { margin-bottom: 20px; }
+        a.btn { margin-bottom: 5px; }
+    }
+}

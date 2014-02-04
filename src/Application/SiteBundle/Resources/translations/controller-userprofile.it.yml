@@ -1,0 +1,8 @@
+####################################################################################################################
+# Translations                                                                                                     #
+#                                                                                                                  #
+# translation related to Application\SiteBundles\Controller\UserProfileController                                       #
+####################################################################################################################
+nav-userprofile:
+    user_profile: Profilo utente
+    published_Application: Application Pubblicati

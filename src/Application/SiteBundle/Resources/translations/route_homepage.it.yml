@@ -1,0 +1,15 @@
+####################################################################################################################
+# Translations                                                                                                     #
+#                                                                                                                  #
+# route name: homepage                                                                                             #
+####################################################################################################################
+Application:
+    head: "<strong>SymfonyApplication</strong> raccoglie %total% giude (denominate \"Application\").<br>Queste sono le più recenti:"
+contribute_next_step: 'Il prossimo passo è visitare <a href="%href%">la sezione "Contribuisci"</a> per avere più informazioni.'
+how_to_contribute: contribuisci
+know_more: scopri di più
+relevant_links: Link in primo piano
+sign_up: |
+    REGISTRATI
+    <br>
+    <span class="text-small">Iscriviti a SymfonyApplication</span>

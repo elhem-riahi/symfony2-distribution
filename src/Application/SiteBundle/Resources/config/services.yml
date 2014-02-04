@@ -1,0 +1,13 @@
+services:
+    # Custom exception listener
+    kernel.listener.application_exception_lstener:
+        class: Application\SiteBundle\Listener\ExceptionListener
+        arguments: [@templating, @kernel]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    application.sitemap.listener:
+        class: Application\SiteBundle\Listener\SitemapListener
+        arguments: [@router, @doctrine.orm.entity_manager]
+        tags:
+            - { name: presta.sitemap.listener }
