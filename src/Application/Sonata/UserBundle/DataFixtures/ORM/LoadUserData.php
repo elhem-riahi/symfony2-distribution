@@ -36,11 +36,10 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
     public function load(ObjectManager $manager)
     {
         $manager = $this->getUserManager();
-        $faker = $this->getFaker();
 
         $user = $manager->createUser();
         $user->setUsername('admin');
-        $user->setEmail($faker->safeEmail);
+        $user->setEmail('admin@admin.fr');
         $user->setPlainPassword('admin');
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
@@ -50,7 +49,7 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
 
         $user = $manager->createUser();
         $user->setUsername('secure');
-        $user->setEmail($faker->safeEmail);
+        $user->setEmail('secure@sandbox.com');
         $user->setPlainPassword('secure');
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
@@ -64,9 +63,9 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
 
         foreach (range(1, 20) as $id) {
             $user = $manager->createUser();
-            $user->setUsername($faker->userName . $id);
-            $user->setEmail($faker->safeEmail);
-            $user->setPlainPassword($faker->randomNumber());
+            $user->setUsername('user-admin'. $id);
+            $user->setEmail('user-admin'. $id.'@sandbox.com');
+            $user->setPlainPassword('123456789');
             $user->setEnabled(true);
             $user->setLocked(false);
 
@@ -75,7 +74,7 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
 
         $user = $manager->createUser();
         $user->setUsername('johndoe');
-        $user->setEmail($faker->safeEmail);
+        $user->setEmail('johndoe@sandbox.com');
         $user->setPlainPassword('johndoe');
         $user->setEnabled(true);
         $user->setSuperAdmin(false);
@@ -91,13 +90,5 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
     public function getUserManager()
     {
         return $this->container->get('fos_user.user_manager');
-    }
-
-    /**
-     * @return \Faker\Generator
-     */
-    public function getFaker()
-    {
-        return $this->container->get('faker.generator');
     }
 }
