@@ -34,6 +34,10 @@ sonata_media_pixlr:
     resource: '@SonataMediaBundle/Resources/config/routing/pixlr.xml'
     prefix: /admin/media
 
+blog:
+    resource: '@SonataNewsBundle/Resources/config/routing/news.xml'
+    prefix: /blog
+    
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

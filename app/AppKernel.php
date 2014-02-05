@@ -39,11 +39,22 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-
+        		
+        	// NEWS
+        	new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
+        	new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+        	new Sonata\NewsBundle\SonataNewsBundle(),
+        	new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
+        		
             // MEDIA
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             // new Liip\ImagineBundle\LiipImagineBundle(),
+            
+        	new Sonata\ClassificationBundle\SonataClassificationBundle(),
+        	new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+        	new Sonata\NotificationBundle\SonataNotificationBundle(),
+        	new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
 
             // SONATA CORE & HELPER BUNDLES
         	new Sonata\CoreBundle\SonataCoreBundle(),

@@ -8,6 +8,8 @@ imports:
     - { resource: sonata/sonata_media.yml }
     - { resource: sonata/sonata_formatter.yml }
     - { resource: sonata/sonata_user.yml }
+    - { resource: sonata/sonata_news.yml }
+    - { resource: sonata/sonata_notification.yml }
 
 framework:
     #esi:             ~
