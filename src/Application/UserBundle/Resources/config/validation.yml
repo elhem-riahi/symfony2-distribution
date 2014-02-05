@@ -1,5 +1,0 @@
-Application\SiteBundle\Entity\Brick:
-    properties:
-        title:
-            - NotBlank:
-                message: 'Please provide a title'
