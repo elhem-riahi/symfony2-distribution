@@ -25,17 +25,18 @@ framework:
 
 # Twig Configuration
 twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
 
     form:
         resources:
             - 'SonataAdminBundle:Form:silex_form_div_layout.html.twig'
             - 'SonataFormatterBundle:Form:formatter.html.twig'
+            - 'SonataMediaBundle:Form:media_widgets.html.twig'
 
 # Assetic Configuration
 assetic:
-    debug:          %kernel.debug%
+    debug:          "%kernel.debug%"
     use_controller: false
     filters:
         cssrewrite: ~
@@ -51,35 +52,56 @@ doctrine:
 
         connections:
             default:
-                driver:   %database_driver%
-                dbname:   %database_name%
-                user:     %database_user%
-                host:     %database_host%
-                password: %database_password%
+                driver:   "%database_driver%"
+                dbname:   "%database_name%"
+                user:     "%database_user%"
+                host:     "%database_host%"
+                password: "%database_password%"
 
         types:
             json: Sonata\Doctrine\Types\JsonType
 
     orm:
-        auto_generate_proxy_classes: %kernel.debug%
+        auto_generate_proxy_classes: "%kernel.debug%"
         default_entity_manager: default
 
         entity_managers:
             default:
                 auto_mapping: true
-                mappings: ~
+                mappings:
+                    gedmo_translatable:
+                        type: annotation
+                        prefix: Gedmo\Translatable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false 
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password: "%mailer_password%"
     
 services:
     twig.text_extension:
         class: Twig_Extensions_Extension_Text
         tags:
             - name: twig.extension 
+            
 jms_security_extra:
     secure_all_services: false
+    
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    orm:
+        default:
+            timestampable: true
+            loggable: true
+            translatable: true

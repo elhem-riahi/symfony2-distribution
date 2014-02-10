@@ -26,10 +26,11 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-
+  		
             // DOCTRINE
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+        	new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             // KNP HELPER BUNDLES
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
@@ -49,10 +50,12 @@ class AppKernel extends Kernel
             // MEDIA
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-            // new Liip\ImagineBundle\LiipImagineBundle(),
             
+        	//Classification
         	new Sonata\ClassificationBundle\SonataClassificationBundle(),
         	new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+        		
+        	//Notification	
         	new Sonata\NotificationBundle\SonataNotificationBundle(),
         	new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
 
@@ -72,6 +75,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Bazinga\Bundle\FakerBundle\BazingaFakerBundle();
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         }
 

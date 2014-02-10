@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Application\Sonata\UserBundle\DataFixtures\ORM;
+namespace Application\Sonata\UserBundl\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -36,10 +36,11 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
     public function load(ObjectManager $manager)
     {
         $manager = $this->getUserManager();
+        $faker = $this->getFaker();
 
         $user = $manager->createUser();
         $user->setUsername('admin');
-        $user->setEmail('admin@admin.fr');
+        $user->setEmail($faker->safeEmail);
         $user->setPlainPassword('admin');
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
@@ -49,7 +50,7 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
 
         $user = $manager->createUser();
         $user->setUsername('secure');
-        $user->setEmail('secure@sandbox.com');
+        $user->setEmail($faker->safeEmail);
         $user->setPlainPassword('secure');
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
@@ -63,9 +64,9 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
 
         foreach (range(1, 20) as $id) {
             $user = $manager->createUser();
-            $user->setUsername('user-admin'. $id);
-            $user->setEmail('user-admin'. $id.'@sandbox.com');
-            $user->setPlainPassword('123456789');
+            $user->setUsername($faker->userName . $id);
+            $user->setEmail($faker->safeEmail);
+            $user->setPlainPassword($faker->randomNumber());
             $user->setEnabled(true);
             $user->setLocked(false);
 
@@ -74,7 +75,7 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
 
         $user = $manager->createUser();
         $user->setUsername('johndoe');
-        $user->setEmail('johndoe@sandbox.com');
+        $user->setEmail($faker->safeEmail);
         $user->setPlainPassword('johndoe');
         $user->setEnabled(true);
         $user->setSuperAdmin(false);
@@ -90,5 +91,13 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
     public function getUserManager()
     {
         return $this->container->get('fos_user.user_manager');
+    }
+
+    /**
+     * @return \Faker\Generator
+     */
+    public function getFaker()
+    {
+        return $this->container->get('faker.generator');
     }
 }
